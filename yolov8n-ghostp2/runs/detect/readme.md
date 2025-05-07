@@ -4,7 +4,7 @@ This variant of YOLOv8n uses a GhostNet-P2 backbone to reduce computation while 
 
 ## Contents
 
-- Training and evaluation notebook
+- Training and evaluation notebook, inside vgg16
 - Logs and metrics (optional `runs/` folder)
 
 GhostNet is ideal for edge devices and resource-constrained environments.
