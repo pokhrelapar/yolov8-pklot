@@ -1,312 +1,554 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
-  <!-- Replace the content tag with appropriate information -->
-  <meta name="description" content="DESCRIPTION META TAG">
-  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
-  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
-  <meta property="og:url" content="URL OF THE WEBSITE"/>
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
-  <meta property="og:image" content="static/image/your_banner_image.png" />
-  <meta property="og:image:width" content="1200"/>
-  <meta property="og:image:height" content="630"/>
+  <head>
+    <meta charset="utf-8" />
+    <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+    <!-- Replace the content tag with appropriate information -->
+    <meta name="description" content="DESCRIPTION META TAG" />
+    <meta property="og:title" content="SOCIAL MEDIA TITLE TAG" />
+    <meta
+      property="og:description"
+      content="SOCIAL MEDIA DESCRIPTION TAG TAG"
+    />
+    <meta property="og:url" content="URL OF THE WEBSITE" />
+    <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+    <meta property="og:image" content="static/image/your_banner_image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
+    <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG" />
+    <meta
+      name="twitter:description"
+      content="TWITTER BANNER DESCRIPTION META TAG"
+    />
+    <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+    <meta
+      name="twitter:image"
+      content="static/images/your_twitter_banner_image.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <!-- Keywords for your paper to be indexed by-->
+    <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
-  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
-  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <!-- Keywords for your paper to be indexed by-->
-  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      Optimizing YOLOv8 for Parking Space Detection: Comparative Analysis of
+      Custom YOLOv8 Architectures_Final
+    </title>
+    <link rel="icon" type="image/x-icon" href="static/images/favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+      rel="stylesheet"
+    />
 
+    <link rel="stylesheet" href="static/css/bulma.min.css" />
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css" />
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css" />
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"
+    />
+    <link rel="stylesheet" href="static/css/index.css" />
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
 
-  <title>Academic Project Page</title>
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-  rel="stylesheet">
-
-  <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="static/css/index.css">
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
-  <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script src="static/js/bulma-carousel.min.js"></script>
-  <script src="static/js/bulma-slider.min.js"></script>
-  <script src="static/js/index.js"></script>
-</head>
-<body>
-
-
-  <section class="hero">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
-            <div class="is-size-5 publication-authors">
-              <!-- Paper authors -->
-              <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+    <script defer src="static/js/fontawesome.all.min.js"></script>
+    <script src="static/js/bulma-carousel.min.js"></script>
+    <script src="static/js/bulma-slider.min.js"></script>
+    <script src="static/js/index.js"></script>
+  </head>
+  <body>
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-1 publication-title">
+                Optimizing YOLOv8 for Parking Space Detection: Comparative
+                Analysis of Custom YOLOv8 Architectures
+              </h1>
+              <div class="is-size-5 publication-authors">
+                <!-- Paper authors -->
                 <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
-                  <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
-                  </span>
-                  </div>
+                  <a
+                    href="https://www.linkedin.com/in/aparpokhrel/"
+                    target="_blank"
+                    >Apar Pokhrel</a
+                  ><sup>*</sup>,</span
+                >
+                <span class="author-block">
+                  <a
+                    href="https://www.linkedin.com/in/gia-dao-556126191/"
+                    target="_blank"
+                    >Gia Dao</a
+                  ></span
+                >
+              </div>
 
-                  <div class="is-size-5 publication-authors">
-                    <span class="author-block">Institution Name<br>Conferance name and year</span>
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
-                  </div>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block"
+                  > Department of Computer Science and Engineering </br>
+                  The University of Texas at Arlington <br
+                /></span>
+                <span class="eql-cntrb"
+                  ><small><br /><sup>*</sup>Indicates First Author</small></span
+                >
+              </div>
 
-                  <div class="column has-text-centered">
-                    <div class="publication-links">
-                         <!-- Arxiv PDF link -->
-                      <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper</span>
-                      </a>
-                    </span>
-
-                    <!-- Supplementary PDF link -->
-                    <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
+              <div class="column has-text-centered">
+                <div class="publication-links">
+                  <!-- Arxiv PDF link -->
+                  <span class="link-block">
+                    <a
+                      href="#paper-embed"
+                      class="external-link button is-normal is-rounded is-dark"
+                    >
                       <span class="icon">
                         <i class="fas fa-file-pdf"></i>
                       </span>
-                      <span>Supplementary</span>
+                      <span>Paper</span>
                     </a>
                   </span>
 
                   <!-- Github link -->
                   <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
-
-                <!-- ArXiv abstract Link -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
+                    <a
+                      href="https://github.com/pokhrelapar/yolov8-pklot"
+                      target="_blank"
+                      class="external-link button is-normal is-rounded is-dark"
+                    >
+                      <span class="icon">
+                        <i class="fab fa-github"></i>
+                      </span>
+                      <span>Code</span>
+                    </a>
                   </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
+
+                  <!-- ArXiv abstract Link -->
+                  <span class="link-block">
+                    <a
+                      href="https://gts.ai/dataset-download/pklot-dataset/"
+                      target="_blank"
+                      class="external-link button is-normal is-rounded is-dark"
+                    >
+                      <span class="icon">
+                        <i class="fas fa-database"></i>
+                      </span>
+                      <span>Dataset</span>
+                    </a>
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-
-<!-- Teaser video-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <!-- Your video here -->
-        <source src="static/videos/banner_video.mp4"
-        type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
-    </div>
-  </div>
-</section>
-<!-- End teaser video -->
-
-<!-- Paper abstract -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
-          </p>
+    <!-- Teaser video-->
+    <section class="hero teaser">
+      <div class="container is-max-desktop">
+        <div class="hero-body">
+          <img
+            src="static\images\yolov8-arch.png"
+            alt="An overview of YOLOv8 architecture"
+          />
+          <h2 class="subtitle has-text-centered">
+            YOLOv8 is the part of the You Only Look Once (YOLO) family of object
+            detectors, featuring an anchor-free detection head, decoupled
+            classification and regression branches, and improved scalability.
+            Its architecture consists of three main components: the
+            <strong>backbone</strong> for feature extraction, the
+            <strong>neck</strong> (typically a PAN/FPN structure) for
+            multi-scale feature fusion, and the <strong>head</strong> for object
+            classification and bounding box regression. In this project, we
+            replaced the default YOLOv8 backbone with four custom
+            architectures—<strong
+              >ResNet-18, VGG16, EfficientNetV2, and GhostNet</strong
+            >—to evaluate their performance in detecting parking space occupancy
+            on the PKLot dataset. Each backbone was integrated into the YOLOv8
+            pipeline, and the resulting models were benchmarked based on
+            accuracy (mAP), inference speed (FPS), and computational efficiency
+            (parameter count). This modular experimentation helped us understand
+            the trade-offs between lightweight and high-capacity backbones in
+            real-world detection scenarios.
+          </h2>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-<!-- End paper abstract -->
+    </section>
+    <!-- End teaser video -->
 
-
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
-  </div>
-</div>
-</div>
-</section>
-<!-- End image carousel -->
-
-
-
-
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- Youtube embed code here -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <!-- Paper abs -->
+    <section class="section hero is-light">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+              <p>
+                Parking space occupancy detection is a critical component in the
+                development of intelligent parking management systems.
+                Traditional object detection approaches, such as YOLOv8, provide
+                fast and accurate vehicle detection across parking lots but can
+                struggle with borderline cases, such as partially visible
+                vehicles, small vehicles (e.g., motorcycles), and poor lighting
+                conditions. In this work, we perform a comprehensive comparative
+                analysis of customized backbone architectures integrated with
+                YOLOv8 on the PKLot dataset in terms of detection accuracy and
+                computational efficiency. Experimental results highlight each
+                architecture’s strengths and trade-offs, providing insight into
+                selecting suitable models for parking occupancy.
+              </p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-<!-- End youtube video -->
+    </section>
 
-
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <video poster="" id="video2" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4"
-            type="video/mp4">
-          </video>
+    <!-- Architecture Overview-->
+    <section class="hero is-small">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <h2 class="title is-3">Architecture Overview</h2>
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="item">
+              <!-- Your image here -->
+              <img src="static/images/resnet18.png" alt="MY ALT TEXT" />
+              <h2 class="subtitle has-text-centered">
+                Overview of Residual block in ResNet-18.
+              </h2>
+            </div>
+            <div class="item">
+              <!-- Your image here -->
+              <img src="static/images/efficient_net.png" alt="MY ALT TEXT" />
+              <h2 class="subtitle has-text-centered">
+                Structure of MBConv and Fused-MBConv
+              </h2>
+            </div>
+            <div class="item">
+              <!-- Your image here -->
+              <img src="static/images/vgg16.png" alt="MY ALT TEXT" />
+              <h2 class="subtitle has-text-centered">
+                Overview of VGG16 architecture.
+              </h2>
+            </div>
+            <div class="item">
+              <!-- Your image here -->
+              <img src="static/images/ghost.jpg" alt="MY ALT TEXT" />
+              <h2 class="subtitle has-text-centered">
+                An illustration of a convolutional layer and the Ghost module
+                operation.
+              </h2>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-<!-- End video carousel -->
+    </section>
 
+    <!-- YAML Configuration -->
+    <section class="section hero is-small is-light">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column is-full">
+            <div class="content">
+              <h2 class="title is-3">YAML Configuration</h2>
+              <div class="level-set has-text-justified">
+                <p>
+                  YOLOv8 allows model customization via a YAML configuration
+                  file. Ain't Markup Language (YAML) is a human-readable data
+                  serialization language used for storing and organizing data,
+                  especially configuration settings. The YAML file for YOLOv8
+                  defines the model architecture by specifying the layers and
+                  their configurations. When loading or training a model, the
+                  YAML file is passed to a parser that dynamically constructs
+                  the model's architecture at runtime. The YAML configuration
+                  for YOLOv8 typically consists of: number of classes (nc),
+                  scales, and the layer definitions grouped under backbone and
+                  head. Each entry in the layer is represented as a list in the
+                  form
+                  <strong>[from, number, module, args]</strong>. Each custom
+                  backbone is implemented as a torchvision model and plugged
+                  into the YAML file.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- Results -->
 
+    <section class="hero is-small">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <h2 class="title is-3">Results</h2>
+          <!-- Your image here -->
 
+          <div class="content has-text-justified">
+            <p>
+              All models achieved high precision and recall, but sub- tle
+              differences emerge when comparing stricter metrics like mAP50:95.
+              YOLO-EfficientNetv2 achieved the best overall detection
+              performance, with the highest mAP50:95
+              <strong>(0.986)</strong> and excellent precision
+              <strong>(0.998)</strong>, while maintaining a moderate
+              computational cost <strong>(56.4 GFLOPs)</strong> and lower
+              inference time <strong>(4.1 ms)</strong>. YOLO-ResNet-18 offered a
+              strong balance, matching the mAP50 score (0.994) and achieving
+              strong precision (0.998) with slightly lower localization accuracy
+              (mAP50:95 = 0.976). YOLO-VGG16, while achieving high precision
+              (0.998), showed a slightly lower recall (0.985) and mAP50:95
+              (0.985), and was the most computationally expensive model (262.1
+              GFLOPs), despite a moderate inference time (3.3 ms), making it
+              less suitable for lightweight deployment. YOLOv8n maintained
+              competi- tive precision and recall (both 0.996) and fast inference
+              (0.9 ms), demonstrating its suitability for real-time applications
+              with minimal compute. YOLO-Ghost-P2 achieved the fastest inference
+              (1.5 ms) among custom modifications with the lowest parameter
+              count (1.6M), but ts slightly lower recall (0.978) and mAP50:95
+              (0.896) suggest a higher likelihood of missed detections.
+              <br />
+              <br />
+              Overall,models like YOLO-VGG16 and EfficientNet excel in detection
+              accuracy, while YOLOv8n and Ghost- P2 are better suited for edge
+              applications where inference speed and model size are critical.
+              Precision-recall trade-offs highlight the need to match model
+              choice with the deployment scenario’s tolerance for false
+              positives and missed detections.
+            </p>
+          </div>
 
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="item">
+              <!-- Your image here -->
+              <img src="static\images\table1.png" alt="MY ALT TEXT" />
+              <h2 class="subtitle has-text-centered">
+                Overview of model performance
+              </h2>
+            </div>
 
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
+            <div class="item">
+              <!-- Your image here -->
+              <img src="static/images/table2.png" alt="MY ALT TEXT" />
+              <h2 class="subtitle has-text-centered">
+                Overview of model complexity.
+              </h2>
+            </div>
 
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
+            <div class="item">
+              <!-- Your image here -->
+              <img src="static\images\table3.png" alt="MY ALT TEXT" />
+              <h2 class="subtitle has-text-centered">Training parameters</h2>
+            </div>
+
+            <div class="item">
+              <!-- Your image here -->
+              <img src="static\images\val_batch0_pred.jpg" alt="MY ALT TEXT" />
+              <h2 class="subtitle has-text-centered">Validation results</h2>
+            </div>
+
+            <div class="item">
+              <!-- Your image here -->
+              <img src="static\images\val_batch1_pred.jpg" alt="MY ALT TEXT" />
+              <h2 class="subtitle has-text-centered">Validation results</h2>
+            </div>
+
+            <div class="item">
+              <!-- Your image here -->
+              <img src="static\images\val_batch2_pred.jpg" alt="MY ALT TEXT" />
+              <h2 class="subtitle has-text-centered">Validation results</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparisons -->
+    <section class="hero is-small is-light">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <h2 class="title is-3">Comparisons</h2>
+          <!-- Your image here -->
+
+          <div class="content has-text-justified">
+            <p>
+              To better understand the training behavior of each YOLO variant,
+              we present key performance metrics plotted over training epochs.
+              YOLOv8n and YOLO-Ghost-P2 showed the fastest drop in loss,
+              attributed to their lightweight architectures, while
+              YOLO-EfficientNet and YOLO-VGG16 required more epochs to stabilize
+              due to deeper networks. Other plots are readily available in the
+              code repository.
+            </p>
+          </div>
+
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="item">
+              <!-- Your image here -->
+              <img
+                src="static\images\comparison_mapat0.5.png"
+                alt="MY ALT TEXT"
+              />
+              <h2 class="subtitle has-text-centered">Comarisons of mAP@0.5</h2>
+            </div>
+
+            <div class="item">
+              <!-- Your image here -->
+              <img
+                src="static/images/comparison_mapat5095.png"
+                alt="MY ALT TEXT"
+              />
+              <h2 class="subtitle has-text-centered">
+                Comparisons of mAP@0.5:0.95
+              </h2>
+            </div>
+            <div class="item">
+              <!-- Your image here -->
+              <img
+                src="static\images\comparison_precision.png"
+                alt="MY ALT TEXT"
+              />
+              <h2 class="subtitle has-text-centered">
+                Comparisons of precision.
+              </h2>
+            </div>
+            <div class="item">
+              <!-- Your image here -->
+              <img
+                src="static\images\comparison_recall.png"
+                alt="MY ALT TEXT"
+              />
+              <h2 class="subtitle has-text-centered">Comparisons of recall.</h2>
+            </div>
+
+            <div class="item">
+              <!-- Your image here -->
+              <img
+                src="static\images\comparison_train_box_loss.png"
+                alt="MY ALT TEXT"
+              />
+              <h2 class="subtitle has-text-centered">
+                Comparisons of training box loss.
+              </h2>
+            </div>
+
+            <div class="item">
+              <!-- Your image here -->
+              <img
+                src="static\images\comparison_train_classification_loss.png"
+                alt="MY ALT TEXT"
+              />
+              <h2 class="subtitle has-text-centered">
+                Comparisons of training classification loss.
+              </h2>
+            </div>
+
+            <div class="item">
+              <!-- Your image here -->
+              <img
+                src="static\images\comparison_validation_box_loss.png"
+                alt="MY ALT TEXT"
+              />
+              <h2 class="subtitle has-text-centered">
+                Comparisons of validation box loss.
+              </h2>
+            </div>
+
+            <div class="item">
+              <!-- Your image here -->
+              <img
+                src="static\images\comparison_validation_classification_loss.png"
+                alt="MY ALT TEXT"
+              />
+              <h2 class="subtitle has-text-centered">
+                Comparisons of validation classification loss.
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Paper poster -->
+    <section class="hero is-small" id="paper-embed">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <h2 class="title">Paper</h2>
+
+          <iframe
+            src="static\pdfs\Optimizing_YOLOv8_for_Parking_Space_Detection__Comparative_Analysis_of_Custom_YOLOv8_Architectures.pdf"
+            width="100%"
+            height="550"
+          >
           </iframe>
-        
-      </div>
-    </div>
-  </section>
-<!--End paper poster -->
-
-
-<!--BibTex citation -->
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <h2 class="title">BibTeX</h2>
-      <pre><code>BibTex Code Here</code></pre>
-    </div>
-</section>
-<!--End BibTex citation -->
-
-
-  <footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-
-          <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-
         </div>
       </div>
-    </div>
-  </div>
-</footer>
+    </section>
+    <!--End paper poster -->
 
-<!-- Statcounter tracking code -->
-  
-<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+    <section class="section" id="BibTeX">
+      <div class="container is-max-desktop content">
+        <h2 class="title">BibTeX</h2>
+        <pre>
+          <code>
+            @misc{pokhrel2025yolov8,
+              author       = {Apar Pokhrel and Gia Dao},
+              title        = {Optimizing YOLOv8 for Parking Space Detection: Comparative Analysis of Custom YOLOv8 Architectures},
+              year         = {2025},
+              institution  = {The University of Texas at Arlington},
+              url          = {https://github.com/pokhrelapar/yolov8-pklot}
+            }            
+   
+        </code>
+      </pre>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-8">
+            <div class="content">
+              <p>
+                This page was built using the
+                <a
+                  href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+                  target="_blank"
+                  >Academic Project Page Template</a
+                >
+                which was adopted from the <a
+                  href="https://nerfies.github.io"
+                  target="_blank"
+                  >Nerfies</a
+                > project page. You are free to borrow the source code of this
+                website, we just ask that you link back to this page in the
+                footer. <br />
+                This website is licensed under a
+                <a
+                  rel="license"
+                  href="http://creativecommons.org/licenses/by-sa/4.0/"
+                  target="_blank"
+                  >Creative Commons Attribution-ShareAlike 4.0 International
+                  License</a
+                >.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Statcounter tracking code -->
+
+    <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
 
     <!-- End of Statcounter Code -->
-
   </body>
-  </html>
+</html>
